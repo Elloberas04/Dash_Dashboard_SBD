@@ -25,3 +25,4 @@ six==1.16.0
 werkzeug==3.0.6
 gunicorn==23.0.0
 requests==2.32.3
+babel==2.11.0

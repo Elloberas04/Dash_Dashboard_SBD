@@ -1,6 +1,5 @@
-import json
-
 import dash
+from babel.numbers import format_currency
 from dash import dcc, html, Input, Output, State
 import dash_bootstrap_components as dbc
 import pandas as pd
@@ -265,16 +264,14 @@ def display_click_data(click_data):
             html.P(f"Name of country: {country_name}"),
             html.P(f"Coordinates: ({latitude}, {longitude})"),
             html.P(f"Total count of films: {movies_count}"),
-            html.P(f"Total renueve: {filtered_df['revenue'].sum()}"),
-            html.P(f"Total budget: {filtered_df['budget'].sum()}"),
+        html.P(f"Total renueve: {format_currency(filtered_df['revenue'].sum(), 'EUR', locale='es_ES')}"),
+        html.P(f"Total budget: {format_currency(filtered_df['budget'].sum(), 'EUR', locale='es_ES')}"),
         ])
 
-        # Crea un toast amb la informació
         return dbc.Toast(
             content,
             header="Information about the country",
             is_open=True,
-            duration=5000,
             dismissable=True,
             style={
                 "position": "fixed",
