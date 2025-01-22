@@ -1,0 +1,87 @@
+#title_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#initial_toast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    width: 500px;
+    height: 300px;
+    font-size: 20px;
+}
+
+#graphs_container1, #graphs_container2, #graphs_container3 {
+    margin: 10px;
+    border: 6px solid #29B5B2;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0px 8px 20px rgba(41, 181, 178, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#graphs_container1:hover, #graphs_container2:hover, #graphs_container3:hover {
+    box-shadow: 0px 16px 40px rgba(41, 181, 178, 0.6);
+    transform: scale(1.02);
+}
+
+#filters_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 10px;
+    border: 6px solid #29B5B2;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 8px 20px rgba(41, 181, 178, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#filters_container:hover {
+    box-shadow: 0px 16px 40px rgba(41, 181, 178, 0.6);
+    transform: scale(1.02);
+}
+
+#buttons_container {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#apply-button, #reset-button {
+    flex: 1;
+    border: none;
+}
+
+#reset-button {
+    background-color: #ff3729;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#reset-button:hover {
+    background-color: #e32d1e;
+    transform: scale(1.05);
+}
+
+#reset-button:active {
+    background-color: #8f1d14;
+}
+
+#apply-button {
+    background-color: #29B5B2;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#apply-button:hover {
+    background-color: #238d89;
+    transform: scale(1.05);
+}
+
+#apply-button:active {
+    background-color: #155653;
+}
