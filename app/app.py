@@ -12,9 +12,6 @@ BASE_URL = 'https://api.themoviedb.org/3/'
 
 # GET Kaggle dataset
 # ==============================================================================
-# movies_1 = pd.read_csv("assets/top_5000_popular_movies_tmdb_1.csv", index_col=0)
-# movies_2 = pd.read_csv("assets/top_5000_popular_movies_tmdb_2.csv", index_col=0)
-
 movies_1 = pd.read_csv("assets/top_5000_popular_movies_tmdb_1.csv", index_col=0)
 movies_2 = pd.read_csv("assets/top_5000_popular_movies_tmdb_2.csv", index_col=0)
 movies_languages = pd.read_csv("assets/movies_countries_languages.csv")
@@ -264,8 +261,8 @@ def display_click_data(click_data):
             html.P(f"Name of country: {country_name}"),
             html.P(f"Coordinates: ({latitude}, {longitude})"),
             html.P(f"Total count of films: {movies_count}"),
-        html.P(f"Total renueve: {format_currency(filtered_df['revenue'].sum(), 'EUR', locale='es_ES')}"),
-        html.P(f"Total budget: {format_currency(filtered_df['budget'].sum(), 'EUR', locale='es_ES')}"),
+            html.P(f"Total renueve: {format_currency(filtered_df['revenue'].sum(), 'EUR', locale='es_ES')}"),
+            html.P(f"Total budget: {format_currency(filtered_df['budget'].sum(), 'EUR', locale='es_ES')}"),
         ])
 
         return dbc.Toast(
@@ -293,4 +290,4 @@ def update_slider_output(value):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=False)
